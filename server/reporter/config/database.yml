@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 120
+
+development:
+  <<: *default
+  database: monitor_development
+  username: monitor
+  password: monitor
+  min_messages: warning
+
+test:
+  <<: *default
+  database: monitor_testing
+  username: monitor
+  password: monitor
+  min_messages: warning
+
+production:
+  <<: *default
+  database: <%= ENV['MONITOR_DB_NAME'] %>
+  username: <%= ENV['MONITOR_DB_USER'] %>
+  password: <%= ENV['MONITOR_DB_PASSWORD'] %>
