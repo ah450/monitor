@@ -1,1 +1,1 @@
-Rails.application.config.jwt_key = ENV['JWT_KEY'] || 'super_secret_string'
+Rails.application.config.jwt_key = ENV['MONITOR_JWT_KEY'] || 'super_secret_string'
